@@ -89,55 +89,71 @@ public class HelpPage extends EvolveBasePage {
 		driver.hideKeyboard();
 		Thread.sleep(5000);
 
+		label("4.1) Action: Tastiera chiusa");
+
 		// step 5 tap coordinate
 		logger.info("Chat con operatore - Step 5 - Tap Coordinate ");
 		TouchAction tapElement = new TouchAction(driver);
+		
+		//1540 prima era 1875
 
-		tapElement.press(new PointOption().point(725, 1875))
+		tapElement.press(new PointOption().point(725, 1540))
 				.waitAction(WaitOptions.waitOptions(Duration.ofMillis(200)))
-				.moveTo(new PointOption().point(420, 1875))
+				.moveTo(new PointOption().point(420, 1540))
 				.release()
 				.perform();
 		
+		Thread.sleep(5000);
+		
 		label("5) Tapped: Scroll 1 ");
 		
-		tapElement.press(new PointOption().point(725, 1875))
+		tapElement.press(new PointOption().point(725, 1540))
 		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(200)))
-		.moveTo(new PointOption().point(420, 1875))
+		.moveTo(new PointOption().point(420, 1540))
 		.release()
 		.perform();
+		
+		Thread.sleep(5000);
 
 		label("5) Tapped: Scroll 2 ");
 		
-		tapElement.press(new PointOption().point(725, 1875))
+		tapElement.press(new PointOption().point(725, 1540))
 		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(200)))
-		.moveTo(new PointOption().point(420, 1875))
+		.moveTo(new PointOption().point(420, 1540))
 		.release()
 		.perform();
+		
+		Thread.sleep(5000);
 
 		label("5) Tapped: Scroll 3 ");
 		
-		tapElement.press(new PointOption().point(725, 1875))
+		tapElement.press(new PointOption().point(725, 1540))
 		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(200)))
-		.moveTo(new PointOption().point(420, 1875))
+		.moveTo(new PointOption().point(420, 1540))
 		.release()
 		.perform();
+
+		Thread.sleep(5000);
 
 		label("5) Tapped: Scroll 4 ");
 		
-		tapElement.press(new PointOption().point(725, 1875))
+		tapElement.press(new PointOption().point(725, 1540))
 		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(200)))
-		.moveTo(new PointOption().point(420, 1875))
+		.moveTo(new PointOption().point(420, 1540))
 		.release()
 		.perform();
+		
+		Thread.sleep(5000);
 
 		label("5) Tapped: Scroll 5 ");
 		
-		tapElement.press(new PointOption().point(725, 1875))
+		tapElement.press(new PointOption().point(725, 1540))
 		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(200)))
-		.moveTo(new PointOption().point(420, 1875))
+		.moveTo(new PointOption().point(420, 1540))
 		.release()
 		.perform();
+		
+		Thread.sleep(5000);
 
 		label("5) Tapped: Scroll 6 ");
 		
@@ -151,7 +167,10 @@ public class HelpPage extends EvolveBasePage {
 //		MobileElement operatorButton = (MobileElement) driver.findElement(By.xpath(
 //				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[1]/android.view.View[2]/android.widget.ListView/android.view.View[4]/android.view.View[3]/android.view.View/android.view.View/android.widget.ListView/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.MenuItem"));
 //		operatorButton.click();
-		tapElement.tap(new PointOption().point(550, 1900)).perform();
+		
+		//Prima 1560 era 1900
+		tapElement.tap(new PointOption().point(550, 1560)).perform();
+		Thread.sleep(5000);
 		label("6) Tapped: 'Btn Voglio parlare con l'operatore'");
 
 		// step 7 click help Voglio parlare con l'operatore conferma
