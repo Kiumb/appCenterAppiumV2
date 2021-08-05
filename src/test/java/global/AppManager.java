@@ -97,7 +97,7 @@ public class AppManager {
         switch(platform){
         case ANDROID:
         	logger.info("switch case Android - dir app : "+"app/Android/A0-0.38.210709.7.apk");
-            app = new File(classpathRoot, "app/Android/A0-0.38.210709.7.apk");
+            app = new File(classpathRoot, "app/Android/A0-0.39.210728.1.apk");
 
             capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
             capabilities.setCapability("appActivity", "bm0.zero.tier2.app.ZeroSplashActivity");

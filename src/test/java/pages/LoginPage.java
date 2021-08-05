@@ -158,17 +158,7 @@ public class LoginPage extends EvolveBasePage {
 		}
 		
 		WaitOptions.waitOptions(Duration.ofSeconds(3));
-//		//step 7 skip finger print
-//		Thread.sleep(5000);
-//		label("7.0) wait 5sec: 'Skip finger print'");		
-//		wait.until(ExpectedConditions.elementToBeClickable(By
-//						.id("bm0.zero.tier2:id/btn_biometric_notnow")));	
-//		//xpath --- /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.Button[2]
-//		logger.info("Scenario) Login nuovo numero - Step 7) skip finger print");
-//		label("7.1) found: 'Skip finger print'");
-//		MobileElement skipFingerPrint = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/btn_biometric_notnow"));
-//		label("7.2) Tapped: 'Skip finger print'");
-//		skipFingerPrint.click();
+
 		
 		//step 8 popup sicurezza vai a security token
 		Thread.sleep(1000);
@@ -262,15 +252,7 @@ public class LoginPage extends EvolveBasePage {
 			label("15.0) Tapped: 'Fingerprint Modal NOT Show'");
 		}
 		
-//		//step 15 skip finger print
-//		logger.info("Scenario) Login nuovo numero - Step 15) skip biometric");
-//		wait.until(ExpectedConditions.elementToBeClickable(By
-//				.id("bm0.zero.tier2:id/sca_use_biometric_not_now_btn")));
-//		MobileElement skipFingerPrint = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/btn_biometric_notnow"));
-//		skipFingerPrint = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/sca_use_biometric_not_now_btn"));
-////		utilDriver.takeScreenShotStep(methodName,"Dialog FingerPrint" ,"Skip Dialog FingerPrint", driver);
-//		label("15) Tapped: 'Skip Finger Print'");
-//		skipFingerPrint.click();
+
 		
 		//step 15 security created
 		label("16) WAIT: 'security token Confirm'");

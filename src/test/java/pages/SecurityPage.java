@@ -2,19 +2,27 @@ package pages;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Rule;
 import org.junit.rules.TestWatcher;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.microsoft.appcenter.appium.Factory;
 
 import global.EvolveBasePage;
 import global.PlatformQuery;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
+import modals.FingerPrintModal;
+import modals.SecurityTokenOldTutorial;
 
 public class SecurityPage extends EvolveBasePage {
 
@@ -69,11 +77,34 @@ public class SecurityPage extends EvolveBasePage {
 		// step 4 click cambia security token
 		logger.info("Security Token - Step 4 - Tap Cambia security token ");
 		label("4) Tapped: 'Btn SecurityTokenSection'");
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup")));
-		MobileElement securityTokenButton = (MobileElement) driver.findElement(By.xpath(
-				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup"));
+		//wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+		//		"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView[1]")));
+		//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='\"Cambia security token\"']")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@resource-id='bm0.zero.tier2:id/arrow_right_title' and contains(@text, 'Cambia security token')]")));
+		label("4) OK Tapped: 'Btn SecurityTokenSection'");
+		
+		//MobileElement email = (MobileElement) driver.findElements((By.className("android.widget.TextView")).contains("Cambia security token"));
+		
+		//MobileElement securityTokenButton = (MobileElement) driver.findElement(By.xpath(
+		//		"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView[1]"));
+		MobileElement securityTokenButton = (MobileElement) driver.findElement(By.xpath("//android.widget.TextView[@resource-id='bm0.zero.tier2:id/arrow_right_title' and contains(@text, 'Cambia security token')]"));
+		
 		securityTokenButton.click();
+		
+		//if exist tutorial
+		Thread.sleep(5000);
+		List<MobileElement> elementListTutorial = driver.findElements(By.id("bm0.zero.tier2:id/dialog_gemalto_tutorial_right_btn"));
+		//titolo fingerprint window --  bm0.zero.tier2:id/sca_use_biometric_title
+		if(elementListTutorial.size()>0){
+			logger.info("Scenario) Login nuovo numero - Step7.0) Tutorial Security Token");
+			label("7.0) Tapped: 'SecurityTokenTurorial'");
+			SecurityTokenOldTutorial.skipSecurityTutorial(driver);
+		}
+		else{
+			System.out.println("Fingerprint Modal NOT Show");
+			logger.info("Scenario) Login nuovo numero - Step7.0) Tutorial Security Token");
+			label("7.0) Tapped: 'Fingerprint Modal NOT Show'");
+		}
 
 		// step 5 inserimento passcode
 		logger.info("Security Token - Step 5 - Inserimento Passcode " + passCode);
@@ -127,13 +158,20 @@ public class SecurityPage extends EvolveBasePage {
 				.findElement(By.id("bm0.zero.tier2:id/security_token_continue_btn"));
 		confirmedSecurityTokenContinueButton.click();
 
-		// step 12 click skip impronta
-		logger.info("Security Token - Step 12 - Tap Btn Skip Impronta ");
-		label("12) Tapped: 'Btn Skip Impronta'");
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/sca_use_biometric_not_now_btn")));
-		MobileElement skipFingerButton = (MobileElement) driver
-				.findElement(By.id("bm0.zero.tier2:id/sca_use_biometric_not_now_btn"));
-		skipFingerButton.click();
+		Thread.sleep(5000);
+		List<MobileElement> elementList = driver.findElements(By.id("bm0.zero.tier2:id/btn_biometric_notnow"));
+		List<MobileElement> elementListText = driver.findElements(By.id("bm0.zero.tier2:id/imageView10"));
+		//titolo fingerprint window --  bm0.zero.tier2:id/sca_use_biometric_title
+		if(elementList.size()>0||elementListText.size()>0){
+			logger.info("Scenario) Login nuovo numero - Step7.0) Fingerprint Modal Show");
+			label("7.0) Tapped: 'FingerPrint Banner'");
+			FingerPrintModal.skip1Finger(driver);
+		}
+		else{
+			System.out.println("Fingerprint Modal NOT Show");
+			logger.info("Scenario) Login nuovo numero - Step7.0) Fingerprint Modal NOT Show");
+			label("7.0) Tapped: 'Fingerprint Modal NOT Show'");
+		}
 
 		// step 13 click conferma security token creato
 		logger.info("Security Token - Step 13 - Tap Btn Conferma Security Token Creato ");
@@ -167,7 +205,7 @@ public class SecurityPage extends EvolveBasePage {
 		tornaHomeStep3Button.click();
 		
 		logger.info("END REAL TEST : < changeSecurityToken >");
-
+		
 		return this;
 	}
 }
