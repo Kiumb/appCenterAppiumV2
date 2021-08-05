@@ -48,7 +48,7 @@ public class CashStreamPage extends EvolveBasePage {
 		logger.info("Scenario ) Test Filtri Cash Stream ");
 		label("< TEST FILTRI CASH STREAM STARTED >");
 
-		// step 1 click money
+		// step 1 click home
 		logger.info("Filtri Cash Stream - Step 1 - Tap Btn Home ");
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/homeFragment")));
 		MobileElement homeButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/homeFragment"));
@@ -473,6 +473,306 @@ public class CashStreamPage extends EvolveBasePage {
 		label("50) Tapped: 'Btn Home Reset'");
 
 		logger.info("END REAL TEST : < testFiltriCashStream >");
+
+		return this;
+	}
+
+	public CashStreamPage testCheckTagCategoria() throws InterruptedException {
+		logger.info("START REAL TEST : < testCheckTagCategoria >");
+
+		logger.info("Scenario ) Test Check Tag Categoria ");
+		label("< TEST FILTRI CASH STREAM STARTED >");
+
+		// step 1 click home
+		logger.info("Check Tag Categoria - Step 1 - Tap Btn Home ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/homeFragment")));
+		MobileElement homeButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/homeFragment"));
+		homeButton.click();
+		label("1) Tapped: 'Btn Home'");
+
+		// step 2 click Transfer List
+		logger.info("Check Tag Categoria - Step 2 - Tap Btn Transfer List ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/userBalanceBox")));
+		MobileElement tlButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/userBalanceBox"));
+		tlButton.click();
+		label("2) Tapped: 'Btn Transfer List'");
+
+		// step 3 click Aggiungi Categoria
+		logger.info("Check Tag Categoria - Step 3 - Tap Btn Aggiungi Categoria ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.view.ViewGroup/android.widget.ImageView")));
+		MobileElement addCategoryButton = (MobileElement) driver.findElement(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.view.ViewGroup/android.widget.ImageView"));
+		addCategoryButton.click();
+		label("3) Tapped: 'Btn Aggiungi Categoria'");
+
+		// step 4 click Scelta Categoria
+		logger.info("Check Tag Categoria - Step 4 - Tap Btn Scelta Categoria ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]")));
+		MobileElement selectCategoryButton = (MobileElement) driver.findElement(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]"));
+		selectCategoryButton.click();
+		label("4) Tapped: 'Btn Scelta Categoria'");
+
+		// step 5 click Imposta
+		logger.info("Check Tag Categoria - Step 5 - Tap Btn Imposta ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/easyToolbarRightTxt")));
+		MobileElement impostaButton = (MobileElement) driver
+				.findElement(By.id("bm0.zero.tier2:id/easyToolbarRightTxt"));
+		impostaButton.click();
+		label("5) Tapped: 'Btn Imposta'");
+
+		// step 6 click Elemento Categoria
+		logger.info("Check Tag Categoria - Step 6 - Tap Btn Elemento Categoria ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.view.ViewGroup/android.widget.LinearLayout[1]")));
+		MobileElement elementCategory = (MobileElement) driver.findElement(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.view.ViewGroup/android.widget.LinearLayout[1]"));
+		elementCategory.click();
+		label("6) Tapped: 'Btn Elemento Categoria'");
+
+		// step 7 click check Categoria
+		logger.info("Check Tag Categoria - Step 7 - Check Categoria ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/category_type")));
+		MobileElement toCheckCategoryElement = (MobileElement) driver
+				.findElement(By.id("bm0.zero.tier2:id/category_type"));
+		label("7) Check: 'Categoria aspettata: Altro', Risultato ottenuto: " + toCheckCategoryElement.getText());
+
+		// step 8 click Indietro
+		logger.info("Check Tag Categoria - Step 8 - Tap Btn Back ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/cashStreamBackBtn")));
+		MobileElement backButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/cashStreamBackBtn"));
+		backButton.click();
+		label("8) Tapped: 'Btn Back'");
+
+		// step 9 click Impostazioni filtro
+		logger.info("Check Tag Categoria - Step 9 - Tap Btn Settings ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/cashStreamSearchFilter")));
+		MobileElement settingsButton = (MobileElement) driver
+				.findElement(By.id("bm0.zero.tier2:id/cashStreamSearchFilter"));
+		settingsButton.click();
+		label("9) Tapped: 'Btn Settings'");
+
+		// step 10 click Impostazioni filtro
+		logger.info("Check Tag Categoria - Step 10 - Tap Btn Expand Category ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.RelativeLayout")));
+		MobileElement expandCategoryButton = (MobileElement) driver.findElement(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.RelativeLayout"));
+		expandCategoryButton.click();
+		label("10) Tapped: 'Btn Expand Category'");
+
+		// step 11 click Altro
+		logger.info("Check Tag Categoria - Step 11 - Tap Btn Altro ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]")));
+		MobileElement altroButton = (MobileElement) driver.findElement(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]"));
+		altroButton.click();
+		label("11) Tapped: 'Btn Altro'");
+
+		// step 12 click Applica Filtro
+		logger.info("Check Tag Categoria - Step 12 - Tap Btn Applica Filtro ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/applyFiltersBtn")));
+		MobileElement applyButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/applyFiltersBtn"));
+		applyButton.click();
+		label("12) Tapped: 'Btn Applica Filtro'");
+
+		// step 13 click Elemento Categoria
+		logger.info("Check Tag Categoria - Step 13 - Tap Btn Elemento Categoria ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.view.ViewGroup/android.widget.LinearLayout[1]")));
+		MobileElement elementFilterCategory = (MobileElement) driver.findElement(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.view.ViewGroup/android.widget.LinearLayout[1]"));
+		elementFilterCategory.click();
+		label("13) Tapped: 'Btn Elemento Categoria'");
+
+		// step 14 click check Categoria
+		logger.info("Check Tag Categoria - Step 14 - Check Categoria ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/category_type")));
+		MobileElement toCheckCategoryFilterElement = (MobileElement) driver
+				.findElement(By.id("bm0.zero.tier2:id/category_type"));
+		label("14) Check: 'Categoria aspettata: Altro', Risultato ottenuto: " + toCheckCategoryFilterElement.getText());
+
+		// step 15 click Indietro
+		logger.info("Check Tag Categoria - Step 15 - Tap Btn Back ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/cashStreamBackBtn")));
+		MobileElement backFilterButton = (MobileElement) driver
+				.findElement(By.id("bm0.zero.tier2:id/cashStreamBackBtn"));
+		backFilterButton.click();
+		label("15) Tapped: 'Btn Back'");
+
+		// step 16 click Rimuovi
+		logger.info("Check Tag Categoria - Step 16 - Tap Btn Rimuovi ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/cashStreamDisableFilters")));
+		MobileElement removeFilterButton = (MobileElement) driver
+				.findElement(By.id("bm0.zero.tier2:id/cashStreamDisableFilters"));
+		removeFilterButton.click();
+		label("16) Tapped: 'Btn Rimuovi'");
+
+		// step 17 click Indietro Ad Home
+		logger.info("Check Tag Categoria - Step 17 - Tap Btn Back to Home ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/cashStreamBackBtn")));
+		MobileElement homeBackButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/cashStreamBackBtn"));
+		homeBackButton.click();
+		label("17) Tapped: 'Btn Back to Home'");
+
+		// step 18 click money
+		logger.info("Filtri Cash Stream - Step 18 - Tap Btn Money ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/moneyFragment")));
+		MobileElement moneyButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/moneyFragment"));
+		moneyButton.click();
+		label("18) Tapped: 'Btn Money'");
+
+		// step 19 click home reset
+		logger.info("Filtri Cash Stream - Step 19 - Tap Btn Home Reset ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/homeFragment")));
+		MobileElement homeResetButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/homeFragment"));
+		homeResetButton.click();
+		label("19) Tapped: 'Btn Home Reset'");
+
+		logger.info("END REAL TEST : < testCheckTagCategoria >");
+
+		return this;
+	}
+
+	public CashStreamPage testCheckRicevuta() throws InterruptedException {
+		logger.info("START REAL TEST : < testCheckRicevuta >");
+
+		logger.info("Scenario ) Test Check Ricevuta ");
+		label("< TEST FILTRI CASH STREAM STARTED >");
+
+		// step 1 click home
+		logger.info("Check Ricevuta - Step 1 - Tap Btn Home ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/homeFragment")));
+		MobileElement homeButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/homeFragment"));
+		homeButton.click();
+		label("1) Tapped: 'Btn Home'");
+
+		// step 2 click Transfer List
+		logger.info("Check Ricevuta - Step 2 - Tap Btn Transfer List ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/userBalanceBox")));
+		MobileElement tlButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/userBalanceBox"));
+		tlButton.click();
+		label("2) Tapped: 'Btn Transfer List'");
+
+		// step 3 click Impostazioni
+		logger.info("Check Ricevuta - Step 3 - Tap Btn Impostazioni ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/cashStreamSearchFilter")));
+		MobileElement settingsButton = (MobileElement) driver
+				.findElement(By.id("bm0.zero.tier2:id/cashStreamSearchFilter"));
+		settingsButton.click();
+		label("3) Tapped: 'Btn Impostazioni'");
+
+		// step 4 click Tipologie
+		logger.info("Check Ricevuta - Step 4 - Tap Btn Tipologie ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[2]/android.view.ViewGroup")));
+		MobileElement typeButton = (MobileElement) driver.findElement(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[2]/android.view.ViewGroup"));
+		typeButton.click();
+		label("4) Tapped: 'Btn Tipologie'");
+
+		// step 5 click Bonifico
+		logger.info("Check Ricevuta - Step 5 - Tap Btn Bonifico ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[5]")));
+		MobileElement bonificoButton = (MobileElement) driver.findElement(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[5]"));
+		bonificoButton.click();
+		label("5) Tapped: 'Btn Bonifico'");
+
+		// step 6 click Tipologie
+		logger.info("Check Ricevuta - Step 6 - Tap Btn Tipologie ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[2]/android.view.ViewGroup")));
+		MobileElement typeCloseButton = (MobileElement) driver.findElement(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[2]/android.view.ViewGroup"));
+		typeCloseButton.click();
+		label("6) Tapped: 'Btn Tipologie'");
+
+		// step 7 click Applica
+		logger.info("Check Ricevuta - Step 6 - Tap Btn Applica ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/applyFiltersBtn")));
+		MobileElement applyButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/applyFiltersBtn"));
+		applyButton.click();
+		label("7) Tapped: 'Btn Applica'");
+
+		// step 8 click Selezione Elemento
+		logger.info("Check Ricevuta - Step 8 - Tap Btn Elemento ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.view.ViewGroup/android.widget.LinearLayout[1]")));
+		MobileElement elementoButton = (MobileElement) driver.findElement(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.view.ViewGroup/android.widget.LinearLayout[1]"));
+		elementoButton.click();
+		label("8) Tapped: 'Btn Elemento'");
+
+		// step 9 scroll fino a Ricevuta
+		logger.info("Check Ricevuta - Step 9 - Scroll Ricevuta ");
+		WaitOptions.waitOptions(Duration.ofSeconds(1));
+		((FindsByAndroidUIAutomator) driver).findElementByAndroidUIAutomator(
+				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Tag\").instance(0))");
+		label("9) Scroll: 'Btn Ricevuta'");
+
+		// step 10 click Ricevuta
+		logger.info("Check Ricevuta - Step 10 - Tap Ricevuta ");
+		MobileElement ricevutaButton = (MobileElement) driver
+				.findElement(By.xpath("//android.widget.TextView[contains(lower-case(@text),'" + "ricevuta" + "')]"));
+		ricevutaButton.click();
+		label("10) Tapped: 'Btn Ricevuta'");
+		
+		/*
+		 * NOTA BENE:
+		 * QUA ANDRA' INSERITA LA PARTE DI CONTROLLO DEL CONTENUTO DEL PDF
+		 * 
+		 */
+
+		// step 11 click PDF
+		logger.info("Check Ricevuta - Step 11 - Tap PDF ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/pdfView")));
+		MobileElement pdfButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/pdfView"));
+		pdfButton.click();
+		label("11) Tapped: 'Btn PDF'");
+
+		// step 12 click Back from PDF
+		logger.info("Check Ricevuta - Step 12 - Tap Back From PDF ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/backBtn")));
+		MobileElement backFromPdfButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/backBtn"));
+		backFromPdfButton.click();
+		label("12) Tapped: 'Btn Back from PDF'");
+
+		// step 13 click Back from Elemento
+		logger.info("Check Ricevuta - Step 13 - Tap Back From Elemento ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/cashStreamBackBtn")));
+		MobileElement backFromElementButton = (MobileElement) driver
+				.findElement(By.id("bm0.zero.tier2:id/cashStreamBackBtn"));
+		backFromElementButton.click();
+		label("13) Tapped: 'Btn Back from Elemento'");
+
+		// step 14 click Back to home
+		logger.info("Check Ricevuta - Step 14 - Tap Back to Home ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/cashStreamBackBtn")));
+		MobileElement backToHomeButton = (MobileElement) driver
+				.findElement(By.id("bm0.zero.tier2:id/cashStreamBackBtn"));
+		backToHomeButton.click();
+		label("14) Tapped: 'Btn Back to Home'");
+
+		// step 15 click money
+		logger.info("Filtri Cash Stream - Step 15 - Tap Btn Money ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/moneyFragment")));
+		MobileElement moneyButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/moneyFragment"));
+		moneyButton.click();
+		label("15) Tapped: 'Btn Money'");
+
+		// step 16 click home reset
+		logger.info("Filtri Cash Stream - Step 16 - Tap Btn Home Reset ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/homeFragment")));
+		MobileElement homeResetButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/homeFragment"));
+		homeResetButton.click();
+		label("16) Tapped: 'Btn Home Reset'");
+
+		logger.info("END REAL TEST : < testCheckRicevuta >");
 
 		return this;
 	}
