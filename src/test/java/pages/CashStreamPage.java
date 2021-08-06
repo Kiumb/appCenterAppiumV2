@@ -55,19 +55,26 @@ public class CashStreamPage extends EvolveBasePage {
 		homeButton.click();
 		label("1) Tapped: 'Btn Home'");
 
-		// step 2 scroll fino a Cash Stream
-		logger.info("Filtri Cash Stream - Step 2 - Scroll Cash Stream ");
-		WaitOptions.waitOptions(Duration.ofSeconds(1));
-		((FindsByAndroidUIAutomator) driver).findElementByAndroidUIAutomator(
-				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().className(\"android.widget.Button\").textContains(\"Vedi tutto\").instance(0))");
-		label("2) Scroll: 'Btn Cash Stream'");
+//		// step 2 scroll fino a Cash Stream
+//		logger.info("Filtri Cash Stream - Step 2 - Scroll Cash Stream ");
+//		WaitOptions.waitOptions(Duration.ofSeconds(1));
+//		((FindsByAndroidUIAutomator) driver).findElementByAndroidUIAutomator(
+//				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().className(\"android.widget.Button\").textContains(\"Vedi tutto\").instance(0))");
+//		label("2) Scroll: 'Btn Cash Stream'");
+//
+//		// step 3 click vedi tutto
+//		logger.info("Filtri Cash Stream - Step 3 - Tap Btn Vedi tutto ");
+//		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/lifeStreamSeeAll")));
+//		MobileElement seeAllButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/lifeStreamSeeAll"));
+//		seeAllButton.click();
+//		label("3) Tapped: 'Btn Vedi tutto'");
 
-		// step 3 click vedi tutto
-		logger.info("Filtri Cash Stream - Step 3 - Tap Btn Vedi tutto ");
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/lifeStreamSeeAll")));
-		MobileElement seeAllButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/lifeStreamSeeAll"));
-		seeAllButton.click();
-		label("3) Tapped: 'Btn Vedi tutto'");
+		// step 2 click Transfer List
+		logger.info("Filtri Cash Stream - Step 2 - Tap Btn Transfer List ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/userBalanceBox")));
+		MobileElement tlButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/userBalanceBox"));
+		tlButton.click();
+		label("2) Tapped: 'Btn Transfer List'");
 
 		if (isOutTransaction) {
 			// step 3.5 click Uscite
@@ -78,32 +85,35 @@ public class CashStreamPage extends EvolveBasePage {
 			label("3.5) Tapped: 'Btn Uscite'");
 		}
 
-		// step 4 send testo da cercare
-		logger.info("Filtri Cash Stream - Step 4 - Send testo da cercare " + toSearch);
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/addressBook_search_text_cash_in")));
-		MobileElement toSearchEl = (MobileElement) driver
-				.findElement(By.id("bm0.zero.tier2:id/addressBook_search_text_cash_in"));
-		toSearchEl.sendKeys(toSearch);
-		label("4) Sent: 'Testo da cercare '" + toSearch);
+		Thread.sleep(5000);
 
-		Thread.sleep(2000);
-
-		// step 5 check risultato aspettato
-		logger.info("Filtri Cash Stream - Step 5 - Check risultato aspettato " + toSearch);
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/transactionItemDescription")));
-		MobileElement checkEl = (MobileElement) driver
-				.findElement(By.id("bm0.zero.tier2:id/transactionItemDescription"));
-		String toCheck = checkEl.getText();
-		label("5) Check: 'Risultato aspettato '" + toSearch + "'Risultato ottenuto '" + toCheck);
-
-		// step 6 click svuota testo
-		logger.info("Filtri Cash Stream - Step 6 - Tap Btn ClearText ");
-		wait.until(ExpectedConditions
-				.elementToBeClickable(By.id("bm0.zero.tier2:id/addressBook_search_delete_icon_cash_in")));
-		MobileElement clearTextButton = (MobileElement) driver
-				.findElement(By.id("bm0.zero.tier2:id/addressBook_search_delete_icon_cash_in"));
-		clearTextButton.click();
-		label("6) Tapped: 'Btn ClearText'");
+//		// step 4 send testo da cercare
+//		logger.info("Filtri Cash Stream - Step 4 - Send testo da cercare " + toSearch);
+//		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/addressBook_search_text_cash_in")));
+//		MobileElement toSearchEl = (MobileElement) driver
+//				.findElement(By.id("bm0.zero.tier2:id/addressBook_search_text_cash_in"));
+//		toSearchEl.sendKeys(toSearch);
+//		label("4) Sent: 'Testo da cercare '" + toSearch);
+//
+//		Thread.sleep(2000);
+//		label("4.5) Azione: Testo inserito");
+//
+//		// step 5 check risultato aspettato
+//		logger.info("Filtri Cash Stream - Step 5 - Check risultato aspettato " + toSearch);
+//		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/transactionItemDescription")));
+//		MobileElement checkEl = (MobileElement) driver
+//				.findElement(By.id("bm0.zero.tier2:id/transactionItemDescription"));
+//		String toCheck = checkEl.getText();
+//		label("5) Check: 'Risultato aspettato '" + toSearch + "'Risultato ottenuto '" + toCheck);
+//
+//		// step 6 click svuota testo
+//		logger.info("Filtri Cash Stream - Step 6 - Tap Btn ClearText ");
+//		wait.until(ExpectedConditions
+//				.elementToBeClickable(By.id("bm0.zero.tier2:id/addressBook_search_delete_icon_cash_in")));
+//		MobileElement clearTextButton = (MobileElement) driver
+//				.findElement(By.id("bm0.zero.tier2:id/addressBook_search_delete_icon_cash_in"));
+//		clearTextButton.click();
+//		label("6) Tapped: 'Btn ClearText'");
 
 		// step 7 click ingranaggi
 		logger.info("Filtri Cash Stream - Step 7 - Tap Btn Ingranaggi ");
@@ -113,14 +123,14 @@ public class CashStreamPage extends EvolveBasePage {
 		settingsButton.click();
 		label("7) Tapped: 'Btn Ingranaggi'");
 
-		// step 8 click Tipologia
-		logger.info("Filtri Cash Stream - Step 8 - Tap Btn Tipologia ");
+		// step 8 click Tipologie
+		logger.info("Filtri Cash Stream - Step 8 - Tap Btn Tipologie ");
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
 				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[2]/android.view.ViewGroup")));
 		MobileElement typeButton = (MobileElement) driver.findElement(By.xpath(
 				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[2]/android.view.ViewGroup"));
 		typeButton.click();
-		label("8) Tapped: 'Btn Tipologia'");
+		label("8) Tapped: 'Btn Tipologie'");
 
 		// step 9 scroll fino a tipologia
 		logger.info("Filtri Cash Stream - Step 9 - Scroll Tipologia " + tipologia);
@@ -348,114 +358,121 @@ public class CashStreamPage extends EvolveBasePage {
 		tagCloseButton.click();
 		label("35) Tapped: 'Btn Tag'");
 
-		// step 36 click Periodo
-		logger.info("Filtri Cash Stream - Step 36 - Tap Btn Periodo ");
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[1]/android.view.ViewGroup")));
-		MobileElement periodButton = (MobileElement) driver.findElement(By.xpath(
-				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[1]/android.view.ViewGroup"));
-		periodButton.click();
-		label("36) Tapped: 'Btn Periodo'");
+//		// step 36 click Periodo
+//		logger.info("Filtri Cash Stream - Step 36 - Tap Btn Periodo ");
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+//				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[1]/android.view.ViewGroup")));
+//		MobileElement periodButton = (MobileElement) driver.findElement(By.xpath(
+//				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[1]/android.view.ViewGroup"));
+//		periodButton.click();
+//		label("36) Tapped: 'Btn Periodo'");
+//
+//		// step 37 click Periodo specifico
+//		logger.info("Filtri Cash Stream - Step 37 - Tap Btn Periodo Specifico ");
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+//				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.LinearLayout")));
+//		MobileElement periodPersonalizedButton = (MobileElement) driver.findElement(By.xpath(
+//				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.LinearLayout"));
+//		periodPersonalizedButton.click();
+//		label("37) Tapped: 'Btn Periodo specifico'");
+//
+//		// step 38 click Periodo A
+//		logger.info("Filtri Cash Stream - Step 38 - Tap Btn Periodo A ");
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+//				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup/android.widget.EditText")));
+//		MobileElement periodToButton = (MobileElement) driver.findElement(By.xpath(
+//				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup/android.widget.EditText"));
+//		periodToButton.click();
+//		label("38) Tapped: 'Btn Periodo A'");
+//
+//		// step 39 click Prev Month
+//		logger.info("Filtri Cash Stream - Step 39 - Tap Btn Prev Month ");
+//		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/mdtp_previous_month_arrow")));
+//		MobileElement prevMonthButton = (MobileElement) driver
+//				.findElement(By.id("bm0.zero.tier2:id/mdtp_previous_month_arrow"));
+//		prevMonthButton.click();
+//		label("39) Tapped: 'Btn Prev Month'");
+//
+//		// step 40 click Last day
+//		logger.info("Filtri Cash Stream - Step 40 - Tap Btn Last Day ");
+//		MobileElement lastDayButton = (MobileElement) driver
+//				.findElement(By.xpath("//android.view.View[contains(lower-case(@content-desc),'" + "28" + "')]"));
+//		lastDayButton.click();
+//		label("40) Tapped: 'Btn Last Day'");
+//
+//		// step 41 click CalendarOK
+//		logger.info("Filtri Cash Stream - Step 41 - Tap Btn CalendarOK ");
+//		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/mdtp_ok")));
+//		MobileElement calendarOKButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/mdtp_ok"));
+//		calendarOKButton.click();
+//		label("41) Tapped: 'Btn CalendarOK'");
+//
+//		// step 42 click Periodo DA
+//		logger.info("Filtri Cash Stream - Step 42 - Tap Btn Periodo DA ");
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+//				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.LinearLayout/android.view.ViewGroup[1]/android.widget.LinearLayout/android.view.ViewGroup/android.widget.EditText")));
+//		MobileElement periodFromButton = (MobileElement) driver.findElement(By.xpath(
+//				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.LinearLayout/android.view.ViewGroup[1]/android.widget.LinearLayout/android.view.ViewGroup/android.widget.EditText"));
+//		periodFromButton.click();
+//		label("42) Tapped: 'Btn Periodo DA'");
+//
+//		// step 42 click Prev Month
+//		logger.info("Filtri Cash Stream - Step 42 - Tap Btn Prev Month ");
+//		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/mdtp_previous_month_arrow")));
+//		MobileElement prevMonthFromButton = (MobileElement) driver
+//				.findElement(By.id("bm0.zero.tier2:id/mdtp_previous_month_arrow"));
+//		prevMonthFromButton.click();
+//		label("42) Tapped: 'Btn Prev Month'");
+//
+//		// step 43 click Last day
+//		logger.info("Filtri Cash Stream - Step 43 - Tap Btn Last Day ");
+//		MobileElement lastDayFromButton = (MobileElement) driver
+//				.findElement(By.xpath("//android.view.View[contains(lower-case(@content-desc),'" + "28" + "')]"));
+//		lastDayFromButton.click();
+//		label("43) Tapped: 'Btn Last Day'");
+//
+//		// step 44 click CalendarOK
+//		logger.info("Filtri Cash Stream - Step 44 - Tap Btn CalendarOK ");
+//		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/mdtp_ok")));
+//		MobileElement calendarOKFromButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/mdtp_ok"));
+//		calendarOKFromButton.click();
+//		label("44) Tapped: 'Btn CalendarOK'");
+//
+//		// step 45 click imposta
+//		logger.info("Filtri Cash Stream - Step 45 - Tap Btn Imposta ");
+//
+//		tapElement.tap(new PointOption().point(500, 2060)).perform();
+//		label("45) Tapped: Btn Imposta ");
+//
+//		Thread.sleep(2000);
+//
+//		// step 46 check risultato aspettato
+//		logger.info("Filtri Cash Stream - Step 46 - Check risultato aspettato ");
+//		MobileElement checkDateEl = (MobileElement) driver.findElement(By.xpath(
+//				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.view.ViewGroup/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.TextView"));
+//		String toCheckDate = checkTagEl.getText();
+//		label("46) Check: 'Risultato aspettato '" + "28" + "'Risultato ottenuto '" + toCheckDate);
+//
+//		// step 47 click rimuovi filtri
+//		logger.info("Filtri Cash Stream - Step 47 - Tap Btn Rimuovi filtri ");
+//		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/cashStreamDisableFilters")));
+//		MobileElement removeFilterButton = (MobileElement) driver
+//				.findElement(By.id("bm0.zero.tier2:id/cashStreamDisableFilters"));
+//		removeFilterButton.click();
+//		label("47) Tapped: 'Btn Rimuovi filtri'");
 
-		// step 37 click Periodo specifico
-		logger.info("Filtri Cash Stream - Step 37 - Tap Btn Periodo Specifico ");
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.LinearLayout")));
-		MobileElement periodPersonalizedButton = (MobileElement) driver.findElement(By.xpath(
-				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.LinearLayout"));
-		periodPersonalizedButton.click();
-		label("37) Tapped: 'Btn Periodo specifico'");
-
-		// step 38 click Periodo A
-		logger.info("Filtri Cash Stream - Step 38 - Tap Btn Periodo A ");
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup/android.widget.EditText")));
-		MobileElement periodToButton = (MobileElement) driver.findElement(By.xpath(
-				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup/android.widget.EditText"));
-		periodToButton.click();
-		label("38) Tapped: 'Btn Periodo A'");
-
-		// step 39 click Prev Month
-		logger.info("Filtri Cash Stream - Step 39 - Tap Btn Prev Month ");
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/mdtp_previous_month_arrow")));
-		MobileElement prevMonthButton = (MobileElement) driver
-				.findElement(By.id("bm0.zero.tier2:id/mdtp_previous_month_arrow"));
-		prevMonthButton.click();
-		label("39) Tapped: 'Btn Prev Month'");
-
-		// step 40 click Last day
-		logger.info("Filtri Cash Stream - Step 40 - Tap Btn Last Day ");
-		MobileElement lastDayButton = (MobileElement) driver
-				.findElement(By.xpath("//android.view.View[contains(lower-case(@content-desc),'" + "28" + "')]"));
-		lastDayButton.click();
-		label("40) Tapped: 'Btn Last Day'");
-
-		// step 41 click CalendarOK
-		logger.info("Filtri Cash Stream - Step 41 - Tap Btn CalendarOK ");
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/mdtp_ok")));
-		MobileElement calendarOKButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/mdtp_ok"));
-		calendarOKButton.click();
-		label("41) Tapped: 'Btn CalendarOK'");
-
-		// step 42 click Periodo DA
-		logger.info("Filtri Cash Stream - Step 42 - Tap Btn Periodo DA ");
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.LinearLayout/android.view.ViewGroup[1]/android.widget.LinearLayout/android.view.ViewGroup/android.widget.EditText")));
-		MobileElement periodFromButton = (MobileElement) driver.findElement(By.xpath(
-				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.LinearLayout/android.view.ViewGroup[1]/android.widget.LinearLayout/android.view.ViewGroup/android.widget.EditText"));
-		periodFromButton.click();
-		label("42) Tapped: 'Btn Periodo DA'");
-
-		// step 42 click Prev Month
-		logger.info("Filtri Cash Stream - Step 42 - Tap Btn Prev Month ");
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/mdtp_previous_month_arrow")));
-		MobileElement prevMonthFromButton = (MobileElement) driver
-				.findElement(By.id("bm0.zero.tier2:id/mdtp_previous_month_arrow"));
-		prevMonthFromButton.click();
-		label("42) Tapped: 'Btn Prev Month'");
-
-		// step 43 click Last day
-		logger.info("Filtri Cash Stream - Step 43 - Tap Btn Last Day ");
-		MobileElement lastDayFromButton = (MobileElement) driver
-				.findElement(By.xpath("//android.view.View[contains(lower-case(@content-desc),'" + "28" + "')]"));
-		lastDayFromButton.click();
-		label("43) Tapped: 'Btn Last Day'");
-
-		// step 44 click CalendarOK
-		logger.info("Filtri Cash Stream - Step 44 - Tap Btn CalendarOK ");
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/mdtp_ok")));
-		MobileElement calendarOKFromButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/mdtp_ok"));
-		calendarOKFromButton.click();
-		label("44) Tapped: 'Btn CalendarOK'");
-
-		// step 45 click imposta
-		logger.info("Filtri Cash Stream - Step 45 - Tap Btn Imposta ");
-
-		tapElement.tap(new PointOption().point(500, 2060)).perform();
-		label("45) Tapped: Btn Imposta ");
-
-		Thread.sleep(2000);
-
-		// step 46 check risultato aspettato
-		logger.info("Filtri Cash Stream - Step 46 - Check risultato aspettato ");
-		MobileElement checkDateEl = (MobileElement) driver.findElement(By.xpath(
-				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.view.ViewGroup/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.TextView"));
-		String toCheckDate = checkTagEl.getText();
-		label("46) Check: 'Risultato aspettato '" + "28" + "'Risultato ottenuto '" + toCheckDate);
-
-		// step 47 click rimuovi filtri
-		logger.info("Filtri Cash Stream - Step 47 - Tap Btn Rimuovi filtri ");
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/cashStreamDisableFilters")));
-		MobileElement removeFilterButton = (MobileElement) driver
-				.findElement(By.id("bm0.zero.tier2:id/cashStreamDisableFilters"));
-		removeFilterButton.click();
-		label("47) Tapped: 'Btn Rimuovi filtri'");
+		// step Momentaneo click back
+		logger.info("Filtri Cash Stream - Step 48 - Tap Btn Back ");
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/cashStreamFiltersBack")));
+		MobileElement backButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/cashStreamFiltersBack"));
+		backButton.click();
+		label("48) Tapped: 'Btn Back'");
 
 		// step 48 click back
 		logger.info("Filtri Cash Stream - Step 48 - Tap Btn Back ");
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/cashStreamBackBtn")));
-		MobileElement backButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/cashStreamBackBtn"));
-		backButton.click();
+		MobileElement backHomeButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/cashStreamBackBtn"));
+		backHomeButton.click();
 		label("48) Tapped: 'Btn Back'");
 
 		// step 49 click money
@@ -721,10 +738,9 @@ public class CashStreamPage extends EvolveBasePage {
 				.findElement(By.xpath("//android.widget.TextView[contains(lower-case(@text),'" + "ricevuta" + "')]"));
 		ricevutaButton.click();
 		label("10) Tapped: 'Btn Ricevuta'");
-		
+
 		/*
-		 * NOTA BENE:
-		 * QUA ANDRA' INSERITA LA PARTE DI CONTROLLO DEL CONTENUTO DEL PDF
+		 * NOTA BENE: QUA ANDRA' INSERITA LA PARTE DI CONTROLLO DEL CONTENUTO DEL PDF
 		 * 
 		 */
 

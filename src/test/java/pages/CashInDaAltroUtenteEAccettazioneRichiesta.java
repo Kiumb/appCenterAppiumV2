@@ -60,23 +60,23 @@ public class CashInDaAltroUtenteEAccettazioneRichiesta extends EvolveBasePage {
 		label("2) Tapped: 'Tap - Money'");
 //		utilDriver.takeScreenShotStep(methodName,"GoTo Money" ,"Jump to Money", driver);
 		
-		//step 3 click home button
-		logger.info("Richiedi Ricarica: Tap - Home ");
+		//step 3 click cash in button
+		logger.info("Richiedi Ricarica: Tap - Cash In ");
 		wait.until(ExpectedConditions.elementToBeClickable(By
-		        .id("bm0.zero.tier2:id/homeFragment")));
-		MobileElement homeButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/homeFragment"));
+		        .id("bm0.zero.tier2:id/homeWidgetBalanceCashIn")));
+		MobileElement homeButton = (MobileElement) driver.findElement(By.id("bm0.zero.tier2:id/homeWidgetBalanceCashIn"));
 		homeButton.click();	
 		WaitOptions.waitOptions(Duration.ofSeconds(1));
-		label("3) Tapped: 'Tap - Home'");
+		label("3) Tapped: 'Tap - Cash In'");
 //		utilDriver.takeScreenShotStep(methodName,"GoTo Home" ,"Jump to Home", driver);
 			
-		//step 4 Tap Cash In 
-		logger.info("Richiedi Ricarica- Step: - Action: Tap < CashIn > ");
-		//wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/adapterProfileBannerDescription")));
-		MobileElement cashIn = (MobileElement) ((AndroidDriver) driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Cash In\").instance(0))");
-				//driver.findElement(By.id("bm0.zero.tier2:id/adapterProfileBannerDescription"));
-		cashIn.click();
-		label("4) Tapped: 'CashIn'");
+//		//step 4 Tap Cash In 
+//		logger.info("Richiedi Ricarica- Step: - Action: Tap < CashIn > ");
+//		//wait.until(ExpectedConditions.elementToBeClickable(By.id("bm0.zero.tier2:id/adapterProfileBannerDescription")));
+//		MobileElement cashIn = (MobileElement) ((AndroidDriver) driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Cash In\").instance(0))");
+//				//driver.findElement(By.id("bm0.zero.tier2:id/adapterProfileBannerDescription"));
+//		cashIn.click();
+//		label("4) Tapped: 'CashIn'");
 //		utilDriver.takeScreenShotStep(methodName,"GoTo CashIn" ,"CashIn", driver);
 		
 		//WORKFLOW WITHOUT SYNC BOOK
