@@ -35,23 +35,23 @@ public class Test_9_CashStreamPage extends BaseTestFixture{
         driver.quit();
     }
     
-    @Test
-    public void test_1_TestFiltri() throws InterruptedException {
-    	logger.info("***start test == testLoginWithCredentials ****");
-        new LoginPage()
-                .enterCredentials("1111110862", "00000", "123456", "00000")
-                .tapHomeButton();
-        
-    	logger.info("***start test == testFiltri ****");
-    	new CashStreamPage()
-    			.testFiltriCashStream("Prova", "Cashflow", "Entrate", "Prova Tag", true);
-    }
+//    @Test
+//    public void test_1_TestFiltri() throws InterruptedException {
+//    	logger.info("***start test == testLoginWithCredentials ****");
+//        new LoginPage()
+//                .enterCredentials("1111110862", "00000", "123456", "00000")
+//                .tapHomeButton();
+//        
+//    	logger.info("***start test == testFiltri ****");
+//    	new CashStreamPage()
+//    			.testFiltriCashStream("Azienda", "Cashflow", "Entrate", "Prova Tag", false);
+//    }
     
     @Test
     public void test_2_TestCheckTagCategoria() throws InterruptedException {
     	logger.info("***start test == testLoginWithCredentials ****");
         new LoginPage()
-                .enterCredentials("1111110611", "00000", "123456", "00000")
+                .enterCredentials("1111110862", "00000", "123456", "00000")
                 .tapHomeButton();
         
     	logger.info("***start test == testCheckTagCategoria ****");
